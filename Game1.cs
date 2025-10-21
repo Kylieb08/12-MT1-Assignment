@@ -71,7 +71,7 @@ namespace _12_MT1_Assignment
             _spriteBatch.Draw(corundumTexture, corundumRect, Color.White);
             _spriteBatch.Draw(emeraldTexture, emeraldRect, Color.White);
             _spriteBatch.Draw(pinkQuartzTexture, pinkQuartzRect, Color.White);
-            _spriteBatch.Draw(quartzTexture, quartzRect, Color.White);
+            _spriteBatch.Draw(quartzTexture, quartzRect, Color.White * 0.7f);
 
             _spriteBatch.End();
 
