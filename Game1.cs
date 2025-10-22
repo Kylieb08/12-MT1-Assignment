@@ -18,6 +18,8 @@ namespace _12_MT1_Assignment
 
         int emeraldPositionX, emeraldPositionY;
 
+        float quartzOpacity;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -45,6 +47,8 @@ namespace _12_MT1_Assignment
             emeraldPositionY = generator.Next(window.Height - emeraldRect.Height);
             emeraldRect.X = emeraldPositionX;
             emeraldRect.Y = emeraldPositionY;
+
+            quartzOpacity = generator.Next(30, 100);
 
             base.Initialize();
         }
@@ -83,7 +87,7 @@ namespace _12_MT1_Assignment
             _spriteBatch.Draw(corundumTexture, corundumRect, Color.White);
             _spriteBatch.Draw(emeraldTexture, emeraldRect, Color.White);
             _spriteBatch.Draw(pinkQuartzTexture, pinkQuartzRect, Color.White);
-            _spriteBatch.Draw(quartzTexture, quartzRect, Color.White * 0.7f);
+            _spriteBatch.Draw(quartzTexture, quartzRect, Color.White * (quartzOpacity / 100));
 
             _spriteBatch.End();
 
