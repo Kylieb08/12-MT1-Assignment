@@ -1,17 +1,22 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace _12_MT1_Assignment
 {
     public class Game1 : Game
     {
+        Random generator;
+
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
         Texture2D caveTexture, corundumTexture, emeraldTexture, pinkQuartzTexture, quartzTexture;
 
         Rectangle caveRect, corundumRect, emeraldRect, pinkQuartzRect, quartzRect, window;
+
+        int emeraldPositionX, emeraldPositionY;
 
         public Game1()
         {
@@ -33,6 +38,13 @@ namespace _12_MT1_Assignment
             emeraldRect = new Rectangle(100, 10, 50, 50);
             pinkQuartzRect = new Rectangle(10, 100, 50, 50);
             quartzRect = new Rectangle(200, 10, 50, 50);
+
+            generator = new Random();
+
+            emeraldPositionX = generator.Next(window.Width - emeraldRect.Width);
+            emeraldPositionY = generator.Next(window.Height - emeraldRect.Height);
+            emeraldRect.X = emeraldPositionX;
+            emeraldRect.Y = emeraldPositionY;
 
             base.Initialize();
         }
