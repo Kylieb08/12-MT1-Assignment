@@ -20,6 +20,8 @@ namespace _12_MT1_Assignment
 
         float quartzOpacity;
 
+        MouseState mouseState;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -37,10 +39,10 @@ namespace _12_MT1_Assignment
             _graphics.ApplyChanges();
 
             caveRect = window;
-            corundumRect = new Rectangle(10, 10, 50, 50);
+            corundumRect = new Rectangle(360, 383, 50, 50);
             emeraldRect = new Rectangle(100, 10, 50, 50);
-            pinkQuartzRect = new Rectangle(10, 100, 50, 50);
-            quartzRect = new Rectangle(200, 10, 50, 50);
+            pinkQuartzRect = new Rectangle(662, 399, 50, 50);
+            quartzRect = new Rectangle(80, 386, 50, 50);
 
             generator = new Random();
 
@@ -72,6 +74,8 @@ namespace _12_MT1_Assignment
                 Exit();
 
             // TODO: Add your update logic here
+            mouseState = Mouse.GetState();
+            this.Window.Title = "x = " + mouseState.X + ", y = " + mouseState.Y;
 
             base.Update(gameTime);
         }
@@ -85,10 +89,18 @@ namespace _12_MT1_Assignment
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(caveTexture, caveRect, Color.White);
-            _spriteBatch.Draw(corundumTexture, corundumRect, Color.White);
-            _spriteBatch.Draw(pinkQuartzTexture, pinkQuartzRect, Color.White);
+
+            _spriteBatch.Draw(corundumTexture, corundumRect, null, Color.White * 0.3f,
+                4f, new Vector2(corundumTexture.Width / 2, corundumTexture.Height / 2),
+                SpriteEffects.FlipVertically, 1f);
+
+            _spriteBatch.Draw(pinkQuartzTexture, pinkQuartzRect, null, Color.White, 
+                0f, new Vector2(pinkQuartzTexture.Width / 2, pinkQuartzTexture.Height / 2), 
+                SpriteEffects.FlipHorizontally, 1f);
+
             _spriteBatch.Draw(quartzTexture, quartzRect, Color.White * (quartzOpacity / 100));
-            _spriteBatch.Draw(emeraldTexture, emeraldRect, Color.White);
+
+            _spriteBatch.Draw(emeraldTexture, emeraldRect, Color.White * 0.85f);
 
             _spriteBatch.End();
 
