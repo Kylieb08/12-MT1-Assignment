@@ -13,6 +13,16 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Font/Ocular-doom.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Font/Ocular-doom.spritefont
+
+#begin Font/OcularDoom-Regular.ttf
+/copy:Font/OcularDoom-Regular.ttf
+
 #begin Images/cave.jpg
 /importer:TextureImporter
 /processor:TextureProcessor

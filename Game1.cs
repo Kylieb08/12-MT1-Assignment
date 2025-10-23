@@ -22,6 +22,8 @@ namespace _12_MT1_Assignment
 
         MouseState mouseState;
 
+        SpriteFont warningFont;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -66,6 +68,8 @@ namespace _12_MT1_Assignment
             emeraldTexture = Content.Load<Texture2D>("Images/Emerald no bg");
             pinkQuartzTexture = Content.Load<Texture2D>("Images/Pink quartz no bg");
             quartzTexture = Content.Load<Texture2D>("Images/Quartz no bg");
+
+            warningFont = Content.Load<SpriteFont>("Font/OcularDoom-Regular");
         }
 
         protected override void Update(GameTime gameTime)
