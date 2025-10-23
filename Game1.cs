@@ -34,6 +34,7 @@ namespace _12_MT1_Assignment
             window = new Rectangle(0, 0, 800, 600);
             _graphics.PreferredBackBufferWidth = window.Width;
             _graphics.PreferredBackBufferHeight = window.Height;
+            _graphics.ApplyChanges();
 
             caveRect = window;
             corundumRect = new Rectangle(10, 10, 50, 50);
