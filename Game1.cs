@@ -69,7 +69,7 @@ namespace _12_MT1_Assignment
             pinkQuartzTexture = Content.Load<Texture2D>("Images/Pink quartz no bg");
             quartzTexture = Content.Load<Texture2D>("Images/Quartz no bg");
 
-            warningFont = Content.Load<SpriteFont>("Font/OcularDoom-Regular");
+            warningFont = Content.Load<SpriteFont>("Font/Ocular-doom");
         }
 
         protected override void Update(GameTime gameTime)
@@ -93,6 +93,8 @@ namespace _12_MT1_Assignment
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(caveTexture, caveRect, Color.White);
+
+            _spriteBatch.DrawString(warningFont, "WARNING", new Vector2(360, 310), Color.Maroon);
 
             _spriteBatch.Draw(corundumTexture, corundumRect, null, Color.White * 0.3f,
                 4f, new Vector2(corundumTexture.Width / 2, corundumTexture.Height / 2),
